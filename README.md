@@ -9,7 +9,7 @@ mkr wan 1310用のライブラリ「LoRa.h」が必要．
 - LoRa_sendGPS.ino：ラズパイからuartで座標情報を取得してそれを送信する．  
   　　　　　　　　　uartで送られてくる座標情報は「x座標,y座標」と，カンマで区切ること．
 - LoRa_senGPS.h：周波数設定用ヘッダーファイル．  
-  　　 　　　　　特に気にしなくていい
+  　　　　　　　特に気にしなくていい
 - LoRa_receiveGPS.ino：送信機から送られてくる座標情報を取得する．  
   　　　　　　　　　　 RSSI(受信強度)も同時に表示する．
 - LoRa_receive.h：LoRa_sendGPS.hと同じ
