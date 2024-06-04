@@ -1,6 +1,6 @@
 #include <SPI.h>
 #include <LoRa.h>
-#include "fromL.h"
+#include "LoRa_freq.h"
 
 float ch = C24;  //C24~C38
 int i = 0;
