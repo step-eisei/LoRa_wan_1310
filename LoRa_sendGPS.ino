@@ -1,5 +1,5 @@
 #include <LoRa.h>
-#include "fromR_toL_gpsuart.h"
+#include "LoRa_freq.h"
 
 String GPS_x;
 String GPS_y;
