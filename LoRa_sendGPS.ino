@@ -4,8 +4,6 @@
 String GPS_x;
 String GPS_y;
 String send_data;
-int send_data_int;
-float send_data_float;
 
 float ch = C24;
 
@@ -18,8 +16,6 @@ void setup() {
     Serial.println("Starting LoRa failed!");
     while (1);
   }
-
-  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
