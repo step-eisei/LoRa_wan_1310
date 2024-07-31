@@ -30,7 +30,7 @@ void loop() {
     LoRa.print(send_data);
     LoRa.endPacket();  //パケットの送信を終了
     Serial.print("LoRa.beginPacket  →  ");  
-    Serial.println(send_data);
+    Serial.print(send_data);
     Serial.print(" , by ");
     Serial.print(ch/1000000);
     Serial.print("MHz");
