@@ -1,9 +1,11 @@
 #include <LoRa.h>
 #include "LoRa_freq.h"
 
-int send_data = 0;
+double x_double;
+double y_double;
+String send_data;
 
-float ch = C24;
+float ch = C24;  //C24~C38
 
 void setup() {
   Serial.begin(9600);
@@ -17,11 +19,11 @@ void setup() {
 }
 
 void loop() {
-  send_data += 1;
-  if(send_data >= 10){
-    send_data = 0;
-  }
   
+  x_double = 35.686483;
+  y_double = 139.759248;
+  send_data = "latitude  = " + String(x_double, 9) + ", longitude = " + String(y_double, 9);
+
   // send packet
   LoRa.beginPacket();  //パケットの送信を開始
   LoRa.print(send_data);
@@ -30,6 +32,7 @@ void loop() {
   Serial.print(send_data);
   Serial.print(" , by ");
   Serial.print(ch/1000000);
-  Serial.print("MHz");
-  Serial.println("LoRa.endPacket");
+  Serial.println("MHz");
+
+  delay(1000);
 }
