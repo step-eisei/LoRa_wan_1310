@@ -1,8 +1,8 @@
 #include <LoRa.h>
 #include "LoRa_freq.h"
 
-String GPS_x;
-String GPS_y;
+double x_double;
+double y_double;
 String send_data;
 
 float ch = C24;
@@ -21,9 +21,9 @@ void setup() {
 void loop() {
   if(Serial1.available() > 0){
     
-    GPS_x = Serial1.readStringUntil(',');
-    GPS_y = Serial1.readStringUntil('\n');
-    send_data = "latitude  = " + GPS_x + ", longitude = " + GPS_y;
+    x_double = atof((Serial1.readStringUntil(',')).c_str());
+    y_double = atof((Serial1.readStringUntil('\n')).c_str());
+    send_data = "latitude  = " + String(x_double, 9) + ", longitude = " + String(y_double, 9); //小数点以下10桁で丸める
 
     // send packet
     LoRa.beginPacket();  //パケットの送信を開始
@@ -33,7 +33,6 @@ void loop() {
     Serial.print(send_data);
     Serial.print(" , by ");
     Serial.print(ch/1000000);
-    Serial.print("MHz");
-    //Serial.println("LoRa.endPacket");
+    Serial.println("MHz");
   }
 }
